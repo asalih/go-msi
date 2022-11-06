@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"fmt"
 	"os"
-	"path"
 	"path/filepath"
 
 	"github.com/asalih/go-msi"
@@ -39,9 +38,7 @@ func main() {
 				break
 			}
 
-			if path.Ext(streamName) != ".cab" {
-				continue
-			}
+			fmt.Println(streamName)
 
 			dStream, err := msi.ReadStream(streamName)
 			if err != nil {

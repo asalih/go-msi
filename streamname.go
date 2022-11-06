@@ -82,7 +82,12 @@ func NameIsValid(name string, isTable bool) bool {
 	}
 
 	enc := NameEncode(name, isTable)
-	return len(enc) <= 31
+	var counter int
+	for _ = range enc {
+		counter++
+	}
+
+	return counter <= 31
 
 }
 
